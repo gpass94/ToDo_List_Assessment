@@ -1,0 +1,15 @@
+.container {
+  border: 2px solid black;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  color: white;
+  background: black;
+
+  padding: 1vw;
+  max-width: 25vw;
+  margin-top: 1vw;
+}
