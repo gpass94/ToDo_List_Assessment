@@ -15,18 +15,26 @@ app.set("views", "./views");
 app.set("view engine", "mustache");
 
 
-const todos = [
-  "Wash the car",
-];
+const todos = {
+  "items": [
+  {"id": 1, "item":"Wash the car", "complete":true},
+  {"id": 2, "item":"Take out the trash", "complete":false}
+]
+};
 
-let completed =[]
-app.get("/", function (req, res) {
-  res.render('index', { "todos": todos });
+app.get('/index', function (req, res) {
+  res.render('index', todos);
 });
 
 app.post("/", function (req, res) {
-  todos.push(req.body.todo);
-  res.redirect('/');
+  let i =todos.items.length + 1;
+  todos.items.push({"id": i, "item": req.body.item, "complete": false});
+  res.redirect('/index');
+});
+
+app.get("/complete/:id",function (req,res) {
+  todos.items[req.params.id -1]. complete =true;
+  res.redirect('/index');
 });
 
 

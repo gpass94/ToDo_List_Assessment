@@ -1,15 +1,18 @@
-.container {
-  border: 2px solid black;
-  padding: 2vw;
+.list-container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-button {
-  color: white;
-  background: black;
+.new{
+  display: flex;
+  flex-direction: row;
+}
 
-  padding: 1vw;
-  max-width: 25vw;
-  margin-top: 1vw;
+.new p{
+  flex-basis: 45%;
+}
+
+.new button{
+  flex-basis: 45%;
 }
